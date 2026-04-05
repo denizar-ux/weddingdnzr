@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Denizar & Thitania · Wedding Planner 2026</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+:root{--ivory:#FAF8F4;--warm:#F5F0E8;--blush:#E9C9B6;--rose:#C47F5E;--deep:#3B2519;--gold:#C4A35A;--sage:#7A9B7C;--muted:#9A8880;--border:#E2D5CB;--card:#FFFDF9;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--deep);min-height:100vh;}
+.app{min-height:100vh;background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(196,163,90,.09) 0%,transparent 60%),var(--ivory);}
+.hdr{text-align:center;padding:44px 24px 28px;}
+.hdr-ornament{color:var(--gold);font-size:11px;letter-spacing:12px;opacity:.55;margin-bottom:10px;}
+.hdr-names{font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,38px);font-weight:400;line-height:1.2;color:var(--deep);}
+.hdr-names em{font-style:italic;color:var(--rose);}
+.hdr-amp{font-style:normal;color:var(--gold);margin:0 8px;}
+.hdr-sub{margin-top:7px;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);}
+.hdr-line{display:flex;align-items:center;gap:8px;max-width:200px;margin:16px auto 0;}
+.hdr-line::before,.hdr-line::after{content:'';flex:1;height:1px;background:var(--gold);opacity:.4;}
+.hdr-diamond{color:var(--gold);font-size:9px;}
+.tabs{display:flex;justify-content:center;padding:0 20px 32px;gap:0;}
+.tab{background:none;border:1px solid var(--border);padding:10px 0;flex:1;max-width:200px;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--muted);transition:all .2s;font-weight:500;}
+.tab:first-child{border-radius:2px 0 0 2px;}
+.tab:last-child{border-radius:0 2px 2px 0;}
+.tab+.tab{border-left:none;}
+.tab.on{background:var(--deep);color:var(--ivory);border-color:var(--deep);}
+.content{max-width:900px;margin:0 auto;padding:0 16px 100px;}
+.prog-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px 24px;margin-bottom:24px;position:relative;overflow:hidden;}
+.prog-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--rose));}
+.prog-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+.prog-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.prog-pct{font-family:'Playfair Display',serif;font-size:34px;font-weight:400;color:var(--rose);}
+.prog-bg{height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--rose));border-radius:3px;transition:width .7s cubic-bezier(.4,0,.2,1);}
+.prog-note{font-size:12px;color:var(--muted);margin-top:7px;}
+.sec-hdr{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.sec-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500;white-space:nowrap;}
+.sec-line{flex:1;height:1px;background:var(--border);}
+.sec-badge{font-size:10px;color:var(--blush);background:var(--deep);padding:2px 8px;border-radius:10px;font-weight:500;}
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+.filter-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-right:2px;}
+.chip{background:none;border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;color:var(--muted);transition:all .2s;}
+.chip.on{background:var(--deep);color:var(--ivory);border-color:var(--deep);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:translateY(0);}}
+.task{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:5px;padding:13px 14px;margin-bottom:7px;transition:all .2s;animation:fadeUp .3s ease;}
+.task:hover{border-color:var(--blush);box-shadow:0 2px 12px rgba(59,37,25,.06);}
+.task.done-item{opacity:.5;}
+.check{width:19px;height:19px;border:1.5px solid var(--border);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;transition:all .2s;background:white;}
+.check.on{background:var(--rose);border-color:var(--rose);}
+.check.on::after{content:'✓';color:white;font-size:10px;}
+.task-body{flex:1;min-width:0;}
+.task-title{font-size:13px;color:var(--deep);line-height:1.4;}
+.task-title.struck{text-decoration:line-through;color:var(--muted);}
+.task-meta{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;align-items:center;}
+.bdg{font-size:10px;letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:2px;font-weight:500;}
+.bdg-urgent{background:rgba(192,96,74,.12);color:#C0604A;}
+.bdg-normal{background:rgba(122,155,124,.12);color:var(--sage);}
+.bdg-date{font-size:11px;color:var(--muted);}
+.bdg-assign{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500;}
+.aD{background:rgba(196,163,90,.15);color:#8B6914;}
+.aT{background:rgba(196,127,94,.15);color:var(--rose);}
+.aB{background:rgba(59,37,25,.08);color:var(--deep);}
+.task-notes-txt{font-size:11px;color:var(--muted);margin-top:3px;font-style:italic;}
+.task-actions{display:flex;gap:4px;flex-shrink:0;}
+.icon-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-size:14px;padding:3px 5px;border-radius:3px;transition:all .15s;line-height:1;}
+.icon-btn:hover{color:var(--deep);background:var(--border);}
+.icon-btn.del:hover{color:#c0392b;background:rgba(192,57,43,.08);}
+.add-form{background:var(--card);border:1px dashed var(--border);border-radius:5px;padding:14px;margin-top:6px;}
+.form-row{display:flex;gap:7px;margin-bottom:8px;flex-wrap:wrap;}
+.inp{flex:1;min-width:120px;border:1px solid var(--border);background:white;border-radius:3px;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--deep);outline:none;transition:border .2s;}
+.inp:focus{border-color:var(--gold);}
+.sel{border:1px solid var(--border);background:white;border-radius:3px;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--deep);outline:none;cursor:pointer;}
+.form-btns{display:flex;gap:7px;justify-content:flex-end;}
+.btn-p{background:var(--deep);color:var(--ivory);border:none;border-radius:3px;padding:8px 16px;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.btn-p:hover{background:var(--rose);}
+.btn-g{background:none;border:1px solid var(--border);border-radius:3px;padding:8px 13px;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--muted);transition:all .2s;}
+.btn-g:hover{border-color:var(--deep);color:var(--deep);}
+.add-trig{display:flex;align-items:center;gap:6px;background:none;border:none;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:9px 0;transition:color .2s;}
+.add-trig:hover{color:var(--rose);}
+.vendor-toolbar{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+.view-toggle{display:flex;border:1px solid var(--border);border-radius:3px;overflow:hidden;}
+.vt-btn{background:none;border:none;padding:7px 14px;font-family:'DM Sans',sans-serif;font-size:11px;cursor:pointer;color:var(--muted);transition:all .2s;display:flex;align-items:center;gap:4px;white-space:nowrap;}
+.vt-btn+.vt-btn{border-left:1px solid var(--border);}
+.vt-btn.on{background:var(--deep);color:var(--ivory);}
+.st-pill{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:10px;font-weight:600;white-space:nowrap;}
+.v-list-section{margin-bottom:26px;}
+.v-row{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:5px;padding:13px 14px;margin-bottom:7px;animation:fadeUp .3s ease;transition:all .2s;}
+.v-row:hover{border-color:var(--blush);box-shadow:0 2px 12px rgba(59,37,25,.06);}
+.v-row-left{flex:1;min-width:0;}
+.v-row-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--deep);font-weight:400;}
+.v-row-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:4px;}
+.v-price{font-size:12px;color:var(--rose);font-weight:500;}
+.v-contact{font-size:11px;color:var(--muted);}
+.v-note-txt{font-size:11px;color:var(--muted);margin-top:3px;font-style:italic;}
+.v-row-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;}
+.v-st-sel{border:1px solid var(--border);background:white;border-radius:3px;padding:5px 8px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--deep);outline:none;cursor:pointer;}
+.kanban{display:flex;gap:10px;overflow-x:auto;padding-bottom:10px;}
+.k-col{min-width:185px;flex:1;}
+.k-col-hdr{display:flex;align-items:center;gap:6px;margin-bottom:9px;padding:8px 11px;border-radius:4px;}
+.k-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.k-col-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;}
+.k-count{font-size:10px;margin-left:auto;opacity:.55;}
+.k-card{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:13px;margin-bottom:7px;animation:fadeUp .3s ease;cursor:pointer;transition:all .2s;}
+.k-card:hover{border-color:var(--blush);box-shadow:0 2px 12px rgba(59,37,25,.07);}
+.k-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;}
+.k-cat-tag{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.k-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--deep);font-weight:400;line-height:1.3;margin-bottom:5px;}
+.k-meta{display:flex;gap:7px;flex-wrap:wrap;}
+.k-price{font-size:11px;color:var(--rose);font-weight:500;}
+.k-contact{font-size:11px;color:var(--muted);}
+.k-note{font-size:11px;color:var(--muted);margin-top:4px;font-style:italic;line-height:1.35;}
+.k-st-btns{display:flex;gap:3px;margin-top:9px;flex-wrap:wrap;}
+.k-st-btn{font-size:9px;letter-spacing:.8px;text-transform:uppercase;padding:3px 6px;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;border:1px solid var(--border);background:transparent;color:var(--muted);transition:all .15s;}
+.link-group{margin-bottom:30px;}
+.link-group-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-left:2px;}
+.link-group-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.link-group-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:500;}
+.link-group-line{flex:1;height:1px;background:var(--border);}
+.link-group-count{font-size:10px;color:var(--blush);background:var(--deep);padding:2px 8px;border-radius:10px;font-weight:500;}
+.link-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+.l-card{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:16px;transition:all .2s;animation:fadeUp .3s ease;position:relative;overflow:hidden;}
+.l-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.l-card[data-c="Prewedding"]::before{background:#C47F5E;}
+.l-card[data-c="Wedding"]::before{background:#C4A35A;}
+.l-card[data-c="Dekorasi"]::before{background:#7A9B7C;}
+.l-card[data-c="Venue"]::before{background:#9b8ea0;}
+.l-card[data-c="Catering"]::before{background:#c4a882;}
+.l-card[data-c="Attire"]::before{background:#E9C9B6;}
+.l-card[data-c="Fotografer"]::before{background:#7a9bb5;}
+.l-card[data-c="Lainnya"]::before{background:var(--muted);}
+.l-card:hover{border-color:var(--blush);box-shadow:0 3px 16px rgba(59,37,25,.08);transform:translateY(-1px);}
+.l-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+.l-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--deep);margin-bottom:5px;line-height:1.3;}
+.l-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
+.l-url{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--rose);text-decoration:none;border-bottom:1px solid transparent;transition:border .2s;}
+.l-url:hover{border-bottom-color:var(--rose);}
+.link-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+.set-card{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:22px 24px;margin-bottom:20px;}
+.set-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--deep);margin-bottom:16px;}
+.tag-list{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.etag{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:3px;font-size:12px;background:var(--warm);border:1px solid var(--border);color:var(--deep);}
+.etag .rm{background:none;border:none;cursor:pointer;color:var(--muted);font-size:13px;line-height:1;padding:0 2px;}
+.etag .rm:hover{color:#c0392b;}
+.overlay{position:fixed;inset:0;background:rgba(59,37,25,.45);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px;animation:ovIn .2s ease;}
+@keyframes ovIn{from{opacity:0;}to{opacity:1;}}
+.modal{background:var(--card);border-radius:7px;padding:30px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;animation:modIn .25s ease;}
+@keyframes modIn{from{opacity:0;transform:scale(.96);}to{opacity:1;transform:scale(1);}}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--deep);margin-bottom:20px;}
+.mf{margin-bottom:12px;}
+.ml{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.mi{width:100%;border:1px solid var(--border);background:white;border-radius:3px;padding:9px 11px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--deep);outline:none;transition:border .2s;}
+.mi:focus{border-color:var(--gold);}
+.mrow{display:flex;gap:10px;}
+.mrow .mf{flex:1;}
+.mbtns{display:flex;gap:9px;justify-content:flex-end;margin-top:20px;}
+.empty{text-align:center;padding:44px 24px;color:var(--muted);}
+.empty-icon{font-size:34px;margin-bottom:10px;opacity:.35;}
+.empty-txt{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;}
+.cust-panel{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:20px;margin-bottom:24px;animation:fadeUp .3s ease;}
+.cust-toggle{display:flex;align-items:center;gap:7px;background:none;border:1px solid var(--border);border-radius:3px;padding:7px 14px;font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;color:var(--muted);transition:all .2s;margin-bottom:20px;}
+.cust-toggle:hover{border-color:var(--deep);color:var(--deep);}
+@media(max-width:600px){
+  .hdr{padding:36px 16px 22px;}
+  .tabs{padding-bottom:24px;}
+  .tab{font-size:9px;letter-spacing:1.5px;padding:10px 0;}
+  .link-cards{grid-template-columns:1fr;}
+  .modal{padding:20px;}
+  .kanban{gap:7px;}
+  .k-col{min-width:155px;}
+}
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <script type="text/babel">
+const { useState, useEffect } = React;
+
+const STATUSES     = ["list","contact","nego","dp","fix"];
+const STATUS_LABEL = {list:"List",contact:"Dihubungi",nego:"Negosiasi",dp:"DP",fix:"Fix ✓"};
+const ASSIGNEES    = ["Denizar","Thitania","Berdua"];
+const ST = {
+  list:    {bg:"rgba(154,136,128,.10)",dot:"#9A8880",col:"#9A8880"},
+  contact: {bg:"rgba(90,140,196,.10)", dot:"#3A6EA5",col:"#3A6EA5"},
+  nego:    {bg:"rgba(196,163,90,.12)", dot:"#C4A35A",col:"#8B6914"},
+  dp:      {bg:"rgba(122,155,124,.12)",dot:"#7A9B7C",col:"#4A7A4C"},
+  fix:     {bg:"rgba(74,180,100,.14)", dot:"#4AAD60",col:"#2D7A40"},
+};
+const CAT_DOT = {
+  Prewedding:"#C47F5E",Wedding:"#C4A35A",Dekorasi:"#7A9B7C",Venue:"#9b8ea0",
+  Catering:"#c4a882",Attire:"#d4a99a",Fotografer:"#7a9bb5",Lainnya:"#9A8880",
+};
+const ACLASS = {Denizar:"aD",Thitania:"aT",Berdua:"aB"};
+const DEF_TASK_CATS   = ["Venue","Catering","Attire","Undangan","Fotografer","Dekorasi","Honeymoon","Lainnya"];
+const DEF_VENDOR_CATS = ["Fotografer","Videografer","Katering","Gedung","Dekorasi","MUA","Gaun","Jas","Hiburan","Lainnya"];
+const DEF_LINK_CATS   = ["Prewedding","Wedding","Dekorasi","Venue","Catering","Attire","Fotografer","Lainnya"];
+const DEF_TASKS = [
+  {id:1,title:"Survey & booking venue resepsi",category:"Venue",priority:"urgent",dueDate:"2026-03-01",notes:"",done:false,assign:"Berdua"},
+  {id:2,title:"Tentukan konsep dan tema pernikahan",category:"Dekorasi",priority:"urgent",dueDate:"2026-02-15",notes:"",done:false,assign:"Berdua"},
+  {id:3,title:"Pilih dan booking fotografer",category:"Fotografer",priority:"urgent",dueDate:"2026-03-15",notes:"",done:false,assign:"Denizar"},
+  {id:4,title:"Fitting baju pengantin",category:"Attire",priority:"normal",dueDate:"2026-05-01",notes:"",done:false,assign:"Thitania"},
+  {id:5,title:"Desain dan cetak undangan",category:"Undangan",priority:"normal",dueDate:"2026-06-01",notes:"",done:false,assign:"Thitania"},
+  {id:6,title:"Food tasting catering",category:"Catering",priority:"normal",dueDate:"2026-05-15",notes:"",done:false,assign:"Berdua"},
+  {id:7,title:"Foto prewedding",category:"Fotografer",priority:"normal",dueDate:"2026-04-01",notes:"",done:false,assign:"Berdua"},
+  {id:8,title:"Rencanakan bulan madu",category:"Honeymoon",priority:"normal",dueDate:"2026-07-01",notes:"",done:false,assign:"Denizar"},
+];
+const DEF_VENDORS = [
+  {id:1,name:"Studio Momento",category:"Fotografer",status:"nego",price:"Rp 15.000.000",contact:"@studiomomento",notes:"Paket full day, diskusi album"},
+  {id:2,name:"Puri Ratna Ballroom",category:"Gedung",status:"list",price:"",contact:"021-5551234",notes:"Kapasitas 500 pax"},
+  {id:3,name:"Dapur Ibu Catering",category:"Katering",status:"contact",price:"Rp 85.000/pax",contact:"0812-3456-789",notes:"Cek menu prasmanan"},
+  {id:4,name:"MUA Syifa",category:"MUA",status:"dp",price:"Rp 4.500.000",contact:"0813-9999-1111",notes:"Include trial makeup"},
+];
+const DEF_LINKS = [
+  {id:1,title:"Moodboard Prewedding",url:"https://pinterest.com",category:"Prewedding",desc:"Inspirasi konsep dan lokasi foto prewedding"},
+  {id:2,title:"Pose Prewedding Outdoor",url:"https://pinterest.com",category:"Prewedding",desc:"Referensi pose outdoor natural"},
+  {id:3,title:"Inspirasi Dekorasi Pelaminan",url:"https://pinterest.com",category:"Dekorasi",desc:"Referensi dekorasi pelaminan dan bunga"},
+  {id:4,title:"Dekorasi Taman Pernikahan",url:"https://pinterest.com",category:"Dekorasi",desc:"Konsep garden party"},
+  {id:5,title:"Wedding Moodboard",url:"https://pinterest.com",category:"Wedding",desc:"Mood, palet warna, dan vibe keseluruhan wedding"},
+];
+
+function useLS(key, init) {
+  const [v, set] = useState(() => {
+    try { const s = localStorage.getItem(key); return s ? JSON.parse(s) : init; }
+    catch { return init; }
+  });
+  useEffect(() => { try { localStorage.setItem(key, JSON.stringify(v)); } catch {} }, [key, v]);
+  return [v, set];
+}
+const uid = () => Date.now() + Math.random();
+
+function Modal({ title, onClose, children }) {
+  return (
+    <div className="overlay" onClick={e => e.target === e.currentTarget && onClose()}>
+      <div className="modal">
+        <div className="modal-title">{title}</div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function TaskTab({ tasks, setTasks, taskCats }) {
+  const [filterCat, setFilterCat]       = useState("Semua");
+  const [filterAssign, setFilterAssign] = useState("Semua");
+  const [addCat, setAddCat]             = useState(null);
+  const [form, setForm]                 = useState({ title:"", priority:"normal", dueDate:"", notes:"", assign:"Berdua" });
+  const [editItem, setEditItem]         = useState(null);
+  const done = tasks.filter(t => t.done).length;
+  const pct  = tasks.length ? Math.round(done / tasks.length * 100) : 0;
+  const filtered = tasks.filter(t =>
+    (filterCat    === "Semua" || t.category === filterCat) &&
+    (filterAssign === "Semua" || t.assign   === filterAssign)
+  );
+  const addTask = (cat) => {
+    if (!form.title.trim()) return;
+    setTasks(p => [...p, { ...form, id: uid(), category: cat, done: false }]);
+    setForm({ title:"", priority:"normal", dueDate:"", notes:"", assign:"Berdua" });
+    setAddCat(null);
+  };
+  const saveEdit = () => { setTasks(p => p.map(x => x.id === editItem.id ? editItem : x)); setEditItem(null); };
+  return (
+    <>
+      <div className="prog-card">
+        <div className="prog-top">
+          <span className="prog-lbl">Wedding Progress</span>
+          <span className="prog-pct">{pct}%</span>
+        </div>
+        <div className="prog-bg"><div className="prog-fill" style={{ width:`${pct}%` }}/></div>
+        <div className="prog-note">{done} dari {tasks.length} task selesai</div>
+      </div>
+      <div className="filter-row">
+        <span className="filter-lbl">Kategori:</span>
+        {["Semua", ...taskCats].map(c => (
+          <button key={c} className={`chip ${filterCat===c?"on":""}`} onClick={() => setFilterCat(c)}>{c}</button>
+        ))}
+      </div>
+      <div className="filter-row" style={{ marginBottom:28 }}>
+        <span className="filter-lbl">PIC:</span>
+        {["Semua","Denizar","Thitania","Berdua"].map(a => (
+          <button key={a} className={`chip ${filterAssign===a?"on":""}`} onClick={() => setFilterAssign(a)}>{a}</button>
+        ))}
+      </div>
+      {taskCats.map(cat => {
+        if (filterCat !== "Semua" && filterCat !== cat) return null;
+        const allInCat  = tasks.filter(t => t.category === cat);
+        const showItems = filtered.filter(t => t.category === cat);
+        return (
+          <div style={{ marginBottom:26 }} key={cat}>
+            <div className="sec-hdr">
+              <span className="sec-title">{cat}</span>
+              <div className="sec-line"/>
+              <span className="sec-badge">{allInCat.filter(t=>t.done).length}/{allInCat.length}</span>
+            </div>
+            {showItems.map(task => (
+              <div className={`task ${task.done?"done-item":""}`} key={task.id}>
+                <div className={`check ${task.done?"on":""}`}
+                  onClick={() => setTasks(p => p.map(x => x.id===task.id ? {...x,done:!x.done} : x))}/>
+                <div className="task-body">
+                  <div className={`task-title ${task.done?"struck":""}`}>{task.title}</div>
+                  <div className="task-meta">
+                    {task.dueDate && <span className="bdg-date">📅 {task.dueDate}</span>}
+                    <span className={`bdg bdg-${task.priority}`}>{task.priority}</span>
+                    <span className={`bdg-assign bdg ${ACLASS[task.assign]||"aB"}`}>{task.assign}</span>
+                  </div>
+                  {task.notes && <div className="task-notes-txt">{task.notes}</div>}
+                </div>
+                <div className="task-actions">
+                  <button className="icon-btn" onClick={() => setEditItem({...task})}>✎</button>
+                  <button className="icon-btn del" onClick={() => setTasks(p => p.filter(x => x.id!==task.id))}>×</button>
+                </div>
+              </div>
+            ))}
+            {addCat === cat ? (
+              <div className="add-form">
+                <div className="form-row">
+                  <input className="inp" placeholder="Nama task..." value={form.title}
+                    onChange={e => setForm(f=>({...f,title:e.target.value}))}
+                    onKeyDown={e => e.key==="Enter" && addTask(cat)}/>
+                </div>
+                <div className="form-row">
+                  <select className="sel" value={form.assign} onChange={e => setForm(f=>({...f,assign:e.target.value}))}>
+                    {ASSIGNEES.map(a => <option key={a}>{a}</option>)}
+                  </select>
+                  <select className="sel" value={form.priority} onChange={e => setForm(f=>({...f,priority:e.target.value}))}>
+                    <option value="normal">Normal</option><option value="urgent">Urgent</option>
+                  </select>
+                  <input type="date" className="inp" value={form.dueDate} onChange={e => setForm(f=>({...f,dueDate:e.target.value}))}/>
+                </div>
+                <div className="form-row">
+                  <input className="inp" placeholder="Catatan (opsional)..." value={form.notes} onChange={e => setForm(f=>({...f,notes:e.target.value}))}/>
+                </div>
+                <div className="form-btns">
+                  <button className="btn-g" onClick={() => setAddCat(null)}>Batal</button>
+                  <button className="btn-p" onClick={() => addTask(cat)}>Tambah</button>
+                </div>
+              </div>
+            ) : (
+              <button className="add-trig" onClick={() => setAddCat(cat)}>+ Tambah Task</button>
+            )}
+          </div>
+        );
+      })}
+      {editItem && (
+        <Modal title="Edit Task" onClose={() => setEditItem(null)}>
+          <div className="mf"><label className="ml">Nama Task</label>
+            <input className="mi" value={editItem.title} onChange={e => setEditItem(x=>({...x,title:e.target.value}))}/>
+          </div>
+          <div className="mrow">
+            <div className="mf"><label className="ml">Kategori</label>
+              <select className="mi" value={editItem.category} onChange={e => setEditItem(x=>({...x,category:e.target.value}))}>
+                {taskCats.map(c => <option key={c}>{c}</option>)}
+              </select>
+            </div>
+            <div className="mf"><label className="ml">PIC</label>
+              <select className="mi" value={editItem.assign} onChange={e => setEditItem(x=>({...x,assign:e.target.value}))}>
+                {ASSIGNEES.map(a => <option key={a}>{a}</option>)}
+              </select>
+            </div>
+          </div>
+          <div className="mrow">
+            <div className="mf"><label className="ml">Priority</label>
+              <select className="mi" value={editItem.priority} onChange={e => setEditItem(x=>({...x,priority:e.target.value}))}>
+                <option value="normal">Normal</option><option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div className="mf"><label className="ml">Due Date</label>
+              <input type="date" className="mi" value={editItem.dueDate} onChange={e => setEditItem(x=>({...x,dueDate:e.target.value}))}/>
+            </div>
+          </div>
+          <div className="mf"><label className="ml">Catatan</label>
+            <input className="mi" placeholder="Opsional..." value={editItem.notes} onChange={e => setEditItem(x=>({...x,notes:e.target.value}))}/>
+          </div>
+          <div className="mbtns">
+            <button className="btn-g" onClick={() => setEditItem(null)}>Batal</button>
+            <button className="btn-p" onClick={saveEdit}>Simpan</button>
+          </div>
+        </Modal>
+      )}
+    </>
+  );
+}
+
+function VendorTab({ vendors, setVendors, vendorCats }) {
+  const [viewMode, setViewMode]   = useState("list");
+  const [filterCat, setFilterCat] = useState("Semua");
+  const [filterSt, setFilterSt]   = useState("Semua");
+  const [showModal, setShowModal] = useState(false);
+  const [editItem, setEditItem]   = useState(null);
+  const emptyForm = { name:"", category:vendorCats[0]||"Lainnya", status:"list", price:"", contact:"", notes:"" };
+  const [form, setForm]           = useState(emptyForm);
+  const base = vendors
+    .filter(v => filterCat==="Semua" || v.category===filterCat)
+    .filter(v => filterSt==="Semua"  || v.status===filterSt);
+  const openAdd  = () => { setEditItem(null); setForm({...emptyForm,category:vendorCats[0]||"Lainnya"}); setShowModal(true); };
+  const openEdit = (v) => { setEditItem(v); setForm({name:v.name,category:v.category,status:v.status,price:v.price,contact:v.contact,notes:v.notes}); setShowModal(true); };
+  const save = () => {
+    if (!form.name.trim()) return;
+    if (editItem) setVendors(p => p.map(x => x.id===editItem.id ? {...form,id:editItem.id} : x));
+    else          setVendors(p => [...p, {...form,id:uid()}]);
+    setShowModal(false);
+  };
+  const setSt = (id, status) => setVendors(p => p.map(x => x.id===id ? {...x,status} : x));
+  const del   = (id) => setVendors(p => p.filter(x => x.id!==id));
+
+  const ListBody = () => {
+    const cats = filterCat==="Semua" ? vendorCats : [filterCat];
+    return (
+      <>
+        {cats.map(cat => {
+          const items = base.filter(v => v.category===cat);
+          if (!items.length) return null;
+          return (
+            <div className="v-list-section" key={cat}>
+              <div className="sec-hdr">
+                <span className="sec-title">{cat}</span>
+                <div className="sec-line"/>
+                <span className="sec-badge">{items.length}</span>
+              </div>
+              {items.map(v => (
+                <div className="v-row" key={v.id}>
+                  <div className="v-row-left">
+                    <div className="v-row-name">{v.name}</div>
+                    <div className="v-row-meta">
+                      <span className="st-pill" style={{background:ST[v.status].bg,color:ST[v.status].col}}>{STATUS_LABEL[v.status]}</span>
+                      {v.price   && <span className="v-price">{v.price}</span>}
+                      {v.contact && <span className="v-contact">📞 {v.contact}</span>}
+                    </div>
+                    {v.notes && <div className="v-note-txt">{v.notes}</div>}
+                  </div>
+                  <div className="v-row-right">
+                    <select className="v-st-sel" value={v.status} onChange={e => setSt(v.id,e.target.value)}>
+                      {STATUSES.map(s => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
+                    </select>
+                    <div style={{display:"flex",gap:4}}>
+                      <button className="icon-btn" onClick={() => openEdit(v)}>✎</button>
+                      <button className="icon-btn del" onClick={() => del(v.id)}>×</button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          );
+        })}
+        {base.length===0 && <div className="empty"><div className="empty-icon">📋</div><div className="empty-txt">Belum ada vendor</div></div>}
+      </>
+    );
+  };
+
+  const KanbanBody = () => (
+    <div className="kanban">
+      {STATUSES.map(st => {
+        const col = base.filter(v => v.status===st);
+        const s   = ST[st];
+        return (
+          <div className="k-col" key={st}>
+            <div className="k-col-hdr" style={{background:s.bg}}>
+              <div className="k-dot" style={{background:s.dot}}/>
+              <span className="k-col-title" style={{color:s.col}}>{STATUS_LABEL[st]}</span>
+              <span className="k-count">{col.length}</span>
+            </div>
+            {col.length===0 && <div style={{textAlign:"center",padding:"16px 0",color:"var(--muted)",fontSize:12,opacity:.4}}>—</div>}
+            {col.map(v => (
+              <div className="k-card" key={v.id} onClick={() => openEdit(v)}>
+                <div className="k-card-top">
+                  <span className="k-cat-tag">{v.category}</span>
+                  <button className="icon-btn del" style={{padding:"2px 4px"}} onClick={e=>{e.stopPropagation();del(v.id);}}>×</button>
+                </div>
+                <div className="k-name">{v.name}</div>
+                <div className="k-meta">
+                  {v.price   && <span className="k-price">{v.price}</span>}
+                  {v.contact && <span className="k-contact">📞 {v.contact}</span>}
+                </div>
+                {v.notes && <div className="k-note">{v.notes}</div>}
+                <div className="k-st-btns" onClick={e=>e.stopPropagation()}>
+                  {STATUSES.map(s2 => {
+                    const active = v.status===s2;
+                    return (
+                      <button key={s2} className="k-st-btn"
+                        style={{background:active?ST[s2].bg:"transparent",color:active?ST[s2].col:"var(--muted)",borderColor:active?"transparent":"var(--border)"}}
+                        onClick={() => setSt(v.id,s2)}>{STATUS_LABEL[s2]}</button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <>
+      <div className="vendor-toolbar">
+        <div className="view-toggle">
+          <button className={`vt-btn ${viewMode==="list"?"on":""}`} onClick={() => setViewMode("list")}>≡ List</button>
+          <button className={`vt-btn ${viewMode==="kanban"?"on":""}`} onClick={() => setViewMode("kanban")}>⊞ Kanban</button>
+        </div>
+        <button className="btn-p" onClick={openAdd}>+ Tambah Vendor</button>
+      </div>
+      <div className="filter-row">
+        <span className="filter-lbl">Kategori:</span>
+        {["Semua",...vendorCats].map(c => (
+          <button key={c} className={`chip ${filterCat===c?"on":""}`} onClick={() => setFilterCat(c)}>{c}</button>
+        ))}
+      </div>
+      <div className="filter-row" style={{marginBottom:22}}>
+        <span className="filter-lbl">Status:</span>
+        {["Semua",...STATUSES].map(s => (
+          <button key={s} className={`chip ${filterSt===s?"on":""}`} onClick={() => setFilterSt(s)}>
+            {s==="Semua"?"Semua":STATUS_LABEL[s]}
+          </button>
+        ))}
+      </div>
+      {viewMode==="list" ? <ListBody/> : <KanbanBody/>}
+      {showModal && (
+        <Modal title={editItem?"Edit Vendor":"Tambah Vendor"} onClose={() => setShowModal(false)}>
+          <div className="mf"><label className="ml">Nama Vendor</label>
+            <input className="mi" placeholder="Nama studio / brand / orang..." value={form.name} onChange={e => setForm(f=>({...f,name:e.target.value}))}/>
+          </div>
+          <div className="mrow">
+            <div className="mf"><label className="ml">Kategori</label>
+              <select className="mi" value={form.category} onChange={e => setForm(f=>({...f,category:e.target.value}))}>
+                {vendorCats.map(c => <option key={c}>{c}</option>)}
+              </select>
+            </div>
+            <div className="mf"><label className="ml">Status</label>
+              <select className="mi" value={form.status} onChange={e => setForm(f=>({...f,status:e.target.value}))}>
+                {STATUSES.map(s => <option key={s} value={s}>{STATUS_LABEL[s]}</option>)}
+              </select>
+            </div>
+          </div>
+          <div className="mrow">
+            <div className="mf"><label className="ml">Harga / Estimasi</label>
+              <input className="mi" placeholder="Rp ..." value={form.price} onChange={e => setForm(f=>({...f,price:e.target.value}))}/>
+            </div>
+            <div className="mf"><label className="ml">Kontak</label>
+              <input className="mi" placeholder="No. HP / IG / email" value={form.contact} onChange={e => setForm(f=>({...f,contact:e.target.value}))}/>
+            </div>
+          </div>
+          <div className="mf"><label className="ml">Catatan</label>
+            <input className="mi" placeholder="Detail, paket, hal penting..." value={form.notes} onChange={e => setForm(f=>({...f,notes:e.target.value}))}/>
+          </div>
+          <div className="mbtns">
+            <button className="btn-g" onClick={() => setShowModal(false)}>Batal</button>
+            <button className="btn-p" onClick={save}>{editItem?"Simpan":"Tambah"}</button>
+          </div>
+        </Modal>
+      )}
+    </>
+  );
+}
+
+function LinksTab({ links, setLinks, linkCats }) {
+  const [filterCat, setFilterCat] = useState("Semua");
+  const [showModal, setShowModal] = useState(false);
+  const [editItem, setEditItem]   = useState(null);
+  const [form, setForm]           = useState({ title:"", url:"", category:"Prewedding", desc:"" });
+  const openAdd  = () => { setEditItem(null); setForm({ title:"", url:"", category:linkCats[0]||"Lainnya", desc:"" }); setShowModal(true); };
+  const openEdit = (l) => { setEditItem(l); setForm({ title:l.title, url:l.url, category:l.category, desc:l.desc }); setShowModal(true); };
+  const save = () => {
+    if (!form.title.trim() || !form.url.trim()) return;
+    if (editItem) setLinks(p => p.map(x => x.id===editItem.id ? {...form,id:editItem.id} : x));
+    else          setLinks(p => [...p, {...form,id:uid()}]);
+    setShowModal(false);
+  };
+  const catsToShow = filterCat==="Semua" ? linkCats : [filterCat];
+  const filteredLinks = links.filter(l => filterCat==="Semua" || l.category===filterCat);
+  return (
+    <>
+      <div className="link-toolbar">
+        <div className="filter-row" style={{marginBottom:0,flex:1}}>
+          {["Semua",...linkCats].map(c => (
+            <button key={c} className={`chip ${filterCat===c?"on":""}`} onClick={() => setFilterCat(c)}>{c}</button>
+          ))}
+        </div>
+        <button className="btn-p" style={{flexShrink:0}} onClick={openAdd}>+ Tambah Link</button>
+      </div>
+      {catsToShow.map(cat => {
+        const items = filteredLinks.filter(l => l.category===cat);
+        if (!items.length) return null;
+        const dotColor = CAT_DOT[cat] || "var(--muted)";
+        return (
+          <div className="link-group" key={cat}>
+            <div className="link-group-hdr">
+              <div className="link-group-dot" style={{background:dotColor}}/>
+              <span className="link-group-title">{cat}</span>
+              <div className="link-group-line"/>
+              <span className="link-group-count">{items.length}</span>
+            </div>
+            <div className="link-cards">
+              {items.map(l => (
+                <div className="l-card" key={l.id} data-c={l.category}>
+                  <div className="l-card-top">
+                    <div style={{flex:1}}><div className="l-title">{l.title}</div></div>
+                    <div style={{display:"flex",gap:3,flexShrink:0,marginLeft:8}}>
+                      <button className="icon-btn" onClick={() => openEdit(l)}>✎</button>
+                      <button className="icon-btn del" onClick={() => setLinks(p => p.filter(x => x.id!==l.id))}>×</button>
+                    </div>
+                  </div>
+                  {l.desc && <div className="l-desc">{l.desc}</div>}
+                  <a className="l-url" href={l.url.startsWith("http")?l.url:`https://${l.url}`} target="_blank" rel="noopener noreferrer">🔗 Buka Link</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+      {filteredLinks.length===0 && <div className="empty"><div className="empty-icon">🔗</div><div className="empty-txt">Belum ada link di kategori ini</div></div>}
+      {showModal && (
+        <Modal title={editItem?"Edit Link":"Tambah Link"} onClose={() => setShowModal(false)}>
+          <div className="mf"><label className="ml">Judul</label>
+            <input className="mi" placeholder="Nama referensi..." value={form.title} onChange={e => setForm(f=>({...f,title:e.target.value}))}/>
+          </div>
+          <div className="mf"><label className="ml">URL</label>
+            <input className="mi" placeholder="https://..." value={form.url} onChange={e => setForm(f=>({...f,url:e.target.value}))}/>
+          </div>
+          <div className="mf"><label className="ml">Kategori</label>
+            <select className="mi" value={form.category} onChange={e => setForm(f=>({...f,category:e.target.value}))}>
+              {linkCats.map(c => <option key={c}>{c}</option>)}
+            </select>
+          </div>
+          <div className="mf"><label className="ml">Deskripsi (opsional)</label>
+            <input className="mi" placeholder="Singkat tentang referensi ini..." value={form.desc} onChange={e => setForm(f=>({...f,desc:e.target.value}))}/>
+          </div>
+          <div className="mbtns">
+            <button className="btn-g" onClick={() => setShowModal(false)}>Batal</button>
+            <button className="btn-p" onClick={save}>{editItem?"Simpan":"Tambah"}</button>
+          </div>
+        </Modal>
+      )}
+    </>
+  );
+}
+
+function SettingsPanel({ taskCats,setTaskCats, vendorCats,setVendorCats, linkCats,setLinkCats }) {
+  const [inp, setInp] = useState({ task:"", vendor:"", link:"" });
+  const addCat = (which) => {
+    const v = inp[which].trim(); if (!v) return;
+    if (which==="task"   && !taskCats.includes(v))   setTaskCats(p=>[...p,v]);
+    if (which==="vendor" && !vendorCats.includes(v)) setVendorCats(p=>[...p,v]);
+    if (which==="link"   && !linkCats.includes(v))   setLinkCats(p=>[...p,v]);
+    setInp(i=>({...i,[which]:""}));
+  };
+  const rmCat = (which, cat) => {
+    if (which==="task")   setTaskCats(p=>p.filter(x=>x!==cat));
+    if (which==="vendor") setVendorCats(p=>p.filter(x=>x!==cat));
+    if (which==="link")   setLinkCats(p=>p.filter(x=>x!==cat));
+  };
+  const Sec = ({ title, which, cats }) => (
+    <div className="set-card">
+      <div className="set-title">{title}</div>
+      <div className="tag-list">
+        {cats.map(c => (
+          <div className="etag" key={c}>{c}<button className="rm" onClick={() => rmCat(which,c)}>×</button></div>
+        ))}
+      </div>
+      <div className="form-row">
+        <input className="inp" placeholder="Nama kategori baru..." value={inp[which]}
+          onChange={e => setInp(i=>({...i,[which]:e.target.value}))}
+          onKeyDown={e => e.key==="Enter" && addCat(which)}/>
+        <button className="btn-p" onClick={() => addCat(which)}>+ Tambah</button>
+      </div>
+    </div>
+  );
+  return (
+    <div>
+      <div style={{fontSize:12,color:"var(--muted)",fontStyle:"italic",marginBottom:20,fontFamily:"'Playfair Display',serif"}}>
+        Customize kategori sesuai kebutuhan Denizar &amp; Thitania ✦
+      </div>
+      <Sec title="Kategori Task Checklist" which="task" cats={taskCats}/>
+      <Sec title="Kategori Vendor" which="vendor" cats={vendorCats}/>
+      <Sec title="Kategori Moodboard & Links" which="link" cats={linkCats}/>
+    </div>
+  );
+}
+
+function App() {
+  const [tab, setTab] = useState("todo");
+  const [showSettings, setShowSettings] = useState(false);
+  const [tasks,      setTasks]      = useLS("dnt26_tasks",      DEF_TASKS);
+  const [vendors,    setVendors]    = useLS("dnt26_vendors",    DEF_VENDORS);
+  const [links,      setLinks]      = useLS("dnt26_links",      DEF_LINKS);
+  const [taskCats,   setTaskCats]   = useLS("dnt26_taskcats",   DEF_TASK_CATS);
+  const [vendorCats, setVendorCats] = useLS("dnt26_vendorcats", DEF_VENDOR_CATS);
+  const [linkCats,   setLinkCats]   = useLS("dnt26_linkcats",   DEF_LINK_CATS);
+  const TABS = [
+    { id:"todo",   label:"Checklist" },
+    { id:"vendor", label:"Vendor List" },
+    { id:"links",  label:"Moodboard & Links" },
+  ];
+  return (
+    <div className="app">
+      <header className="hdr">
+        <div className="hdr-ornament">✦ ✦ ✦</div>
+        <div className="hdr-names">
+          <em>Denizar</em>
+          <span className="hdr-amp">&amp;</span>
+          <em>Thitania</em>
+        </div>
+        <div className="hdr-sub">Wedding Planner · 2026</div>
+        <div className="hdr-line"><span className="hdr-diamond">◆</span></div>
+      </header>
+      <div className="tabs">
+        {TABS.map(t => (
+          <button key={t.id} className={`tab ${tab===t.id && !showSettings?"on":""}`}
+            onClick={() => { setTab(t.id); setShowSettings(false); }}>
+            {t.label}
+          </button>
+        ))}
+      </div>
+      <div className="content">
+        <div style={{display:"flex",justifyContent:"flex-end",marginBottom:showSettings?0:20}}>
+          <button className="cust-toggle" onClick={() => setShowSettings(s => !s)}>
+            ⚙ {showSettings?"Tutup Customize":"Customize Kategori"}
+          </button>
+        </div>
+        {showSettings && (
+          <div className="cust-panel">
+            <SettingsPanel
+              taskCats={taskCats}     setTaskCats={setTaskCats}
+              vendorCats={vendorCats} setVendorCats={setVendorCats}
+              linkCats={linkCats}     setLinkCats={setLinkCats}
+            />
+          </div>
+        )}
+        {!showSettings && tab==="todo"   && <TaskTab   tasks={tasks}     setTasks={setTasks}     taskCats={taskCats}/>}
+        {!showSettings && tab==="vendor" && <VendorTab vendors={vendors} setVendors={setVendors} vendorCats={vendorCats}/>}
+        {!showSettings && tab==="links"  && <LinksTab  links={links}     setLinks={setLinks}     linkCats={linkCats}/>}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+</body>
+</html>
